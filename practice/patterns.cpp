@@ -30,7 +30,7 @@ void print2(int n)
 };
 void print3(int n)
 {
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i <= n; i++)
     {
         /* space */
         for (int j = 0; j < n - 1 - i; j++)
@@ -41,7 +41,7 @@ void print3(int n)
         /* Star */
         for (int j = 0; j < 2 * i + 1; j++)
         {
-            cout << "*";
+            cout << "$";
         };
 
         /* space */
@@ -54,7 +54,7 @@ void print3(int n)
 };
 void print4(int n)
 {
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i <= n; i++)
     {
         // for space
         for (int j = 0; j < i; j++)
@@ -75,7 +75,8 @@ void print4(int n)
 
 int main()
 {
-    int n = 7;
+    int n = 5;
     //    cin>>n;
+    print3(n);
     print4(n);
 }

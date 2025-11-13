@@ -51,10 +51,10 @@ int main()
     // har.salary = 100;
     // har.printDetails();
 
-    int a, b;
-    a = 10;
-    b = 20;
-    int *p = &a;
+    // int a, b;
+    // a = 10;
+    // b = 20;
+    // int *p = &a;
     // cout << "original value of a is " << a << endl;
     // cout << "original value of b is " << b;
 
@@ -62,11 +62,33 @@ int main()
     // cout << "changed value of a is " << a << endl;
     // cout << "changed value of b is " << b;
 
-    cout << "value of a is " << a<<endl;
-    cout << "address of a is " << &a<<endl;
-    cout << "address of p is " << p<<endl;
-    cout << "value of p is " << *p<<endl;
-    cout << "value s of p is " << &p<<endl;
+    // cout << "value of a is " << a<<endl;
+    // cout << "address of a is " << &a<<endl;
+    // cout << "address of p is " << p<<endl;
+    // cout << "value of p is " << *p<<endl;
+    // cout << "value s of p is " << &p<<endl;
+
+int arr[] = {2,4,6,9,0,-5, 3, 11, 29, -456};
+int length = 10;
+int largest = arr[0];
+// int largest_test =0;
+for (int i = 0; i < length ; i++)
+{
+ if (arr[i] > largest)
+ {
+     largest = arr[i];
+    
+ }
+cout<<"the largest number of the array is"<<largest;
+
+// return 0;
+
+}
+
+
+
+
+
 
     return 0;
 }
