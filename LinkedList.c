@@ -14,6 +14,7 @@ while (ptr != NULL){
 };
 
 
+
 int main(){
     struct Node * head;
     struct Node * second;
