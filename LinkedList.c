@@ -13,6 +13,12 @@ while (ptr != NULL){
 }
 };
 
+ struct Node * insertAtFirst(struct Node *head, int data ){
+    struct Node * ptr = (struct Node *)malloc(sizeof(struct Node));
+    ptr ->next = head;
+    ptr -> data = data;
+    return ptr;
+ };
 
 
 int main(){
@@ -24,7 +30,7 @@ int main(){
     head = (struct Node *)malloc(sizeof(struct Node));
     second = (struct Node *)malloc(sizeof(struct Node));
     third = (struct Node *)malloc(sizeof(struct Node));
-
+    printf("%d the size of head",sizeof(head)); 
     // Link first and second list
     head -> data = 7;
     head -> next = second ;
@@ -35,6 +41,8 @@ int main(){
     third -> data = 17;
     third -> next = NULL ;
 
+    linklistTraversal(head);
+    head = insertAtFirst(head, 56);
     linklistTraversal(head);
 
     return 0;
