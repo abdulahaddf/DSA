@@ -103,27 +103,34 @@ Node *CreateLinkedList(int arr[], int index, int size)
 
 
 
-Node* insertAtPosition(Node* head, int x, int value) {
-    // Insert at head
-    if (x == 0) {
-        Node* temp = new Node(value);
-        temp->next = head;
-        return temp;
-    }
+// Node* insertAtPosition(Node* head, int x, int value) {
+//     // Insert at head
+//     if (x == 0) {
+//         Node* temp = new Node(value);
+//         temp->next = head;
+//         return temp;
+//     }
 
-    Node* curr = head;
-    for (int i = 0; curr != NULL && i < x - 1; i++) {
-        curr = curr->next;
-    }
+//     Node* curr = head;
+//     for (int i = 0; curr != NULL && i < x - 1; i++) {
+//         curr = curr->next;
+//     }
 
-    if (curr == NULL) return head;  // invalid position
+//     if (curr == NULL) return head;  // invalid position
 
-    Node* temp = new Node(value);
-    temp->next = curr->next;
-    curr->next = temp;
+//     Node* temp = new Node(value);
+//     temp->next = curr->next;
+//     curr->next = temp;
 
-    return head;
-}
+//     return head;
+// }
+
+
+
+
+
+
+
 
 
 int main()
