@@ -52,8 +52,8 @@ Node *CreateLinkedListByRecursion(int arr[], int index, int size)
     {
         return NULL;
     }
-    Node * temp = new Node(arr[index]);
-    temp ->next = CreateLinkedListByRecursion(arr,index+1,size);
+    Node *temp = new Node(arr[index]);
+    temp->next = CreateLinkedListByRecursion(arr, index + 1, size);
     return temp;
 };
 
@@ -74,28 +74,43 @@ Node *DeleteNode(int arr[], int size, int index)
 int main()
 {
     Node *Head;
-    int arr[] = {1, 2, 3, 4, 5, 6};
-    int size = 6;
-    Head = CreateLinkedListByRecursion(arr,0, size);
+    // int arr[] = {1, 2, 3, 4, 5, 6};
+    int arr[] = {1};
+    int size = 1;
+    Head = CreateLinkedListByRecursion(arr, 0, size);
 
     DeleteNode(arr, size, 3);
 
-// Delete Node at the first
-// if(Head != NULL){
-// Node * temp = Head;
-// Head = Head ->next;
-// delete temp;
-// };
+    // Delete Node at the first
+    // if(Head != NULL){
+    // Node * temp = Head;
+    // Head = Head ->next;
+    // delete temp;
+    // };
 
+    // Delete last node
+    Node *curr = Head;
+    Node *prev;
+    if (Head != NULL)
+    {
 
-// Delete last node
-for (int i=0 ; i < 6; i++)
-{
-    
-}
+        if (curr->next == NULL)
+        {
+            delete Head;
+            Head = NULL;
+        }
+        else
+        {
 
-
-
+            while (curr->next != NULL)
+            {
+                prev = curr;
+                curr = curr->next;
+            }
+            prev->next = NULL;
+            delete curr;
+        }
+    }
 
     // Preview Node
     Node *temp = Head;
