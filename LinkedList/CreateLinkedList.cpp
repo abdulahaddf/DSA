@@ -14,6 +14,38 @@ public:
     }
 };
 
+Node *CreateLinkedListByHead(int arr[], int size)
+{
+    Node *Head = NULL;
+    for (int i = 0; i < size; i++)
+    {
+        if (Head == NULL)
+        {
+            Head = new Node(arr[i]);
+        }
+        else
+        {
+            Node *temp;
+            temp = new Node(arr[i]);
+            temp->next = Head;
+            Head = temp;
+        }
+    }
+    return Head;
+}
+
+Node *CreateLinkedListByTail(int arr[], int size)
+{
+    Node *Head = new Node(arr[0]);
+    Node *Tail = Head;
+
+    for (int i = 0; i < size; i++)
+    {
+        Tail->next = new Node(arr[i]);
+        Tail = Tail->next;
+    }
+    return Head;
+}
 Node *CreateLinkedListByRecursion(int arr[], int index, int size)
 {
     if (index == size)
@@ -25,19 +57,6 @@ Node *CreateLinkedListByRecursion(int arr[], int index, int size)
     return temp;
 };
 
-Node * reverse(Node * Head)
-{
-    if (Head == NULL || Head->next == NULL)
-    {
-        return Head;
-    }
-    Node * newHead =reverse(Head->next);
-    Head->next->next = Head;
-    Head->next = NULL;
-    return newHead;
-
-};
-
 int main()
 {
     Node *Head;
@@ -45,9 +64,6 @@ int main()
     int size = 6;
     Head = CreateLinkedListByRecursion(arr, 0, size);
 
-
-   Head = reverse(Head);
-//    reversedHead = Head;
 
     // Preview Node
     Node *temp = Head;
