@@ -26,10 +26,24 @@ Node *createDLL(int arr[], int index, int size)
     Node *temp = new Node(arr[index]);
     temp->next = createDLL(arr, index + 1, size);
     // temp->next->prev = temp;
-      // if there is a next node, set its prev to temp
-    if (temp->next != nullptr) {
+    // if there is a next node, set its prev to temp
+    if (temp->next != nullptr)
+    {
         temp->next->prev = temp;
     }
+    return temp;
+}
+Node *createDLL2(int arr[], int index, int size, Node *back)
+{
+    if (index == size)
+    {
+        return NULL;
+    }
+
+    Node *temp = new Node(arr[index]);
+    temp->prev = back;
+    temp->next = createDLL2(arr, index + 1, size, temp);
+
     return temp;
 }
 
@@ -48,32 +62,38 @@ Node *CreateDLLbyTail(int arr[], int size)
     return Head;
 }
 
-// 
+//
 
-void InsertAt(Node *& head, int psn, int num) {
-    Node* toInsert = new Node(num);
+void InsertAt(Node *&head, int psn, int num)
+{
+    Node *toInsert = new Node(num);
 
-    if (psn <= 0 || head == NULL) {
+    if (psn <= 0 || head == NULL)
+    {
         toInsert->next = head;
         toInsert->prev = NULL;
-        if (head) head->prev = toInsert;
+        if (head)
+            head->prev = toInsert;
         head = toInsert;
         return;
     }
 
     // Insert at head (position 0)
-    if (psn <= 0 || head == nullptr) {
+    if (psn <= 0 || head == nullptr)
+    {
         toInsert->next = head;
         toInsert->prev = nullptr;
-        if (head) head->prev = toInsert;
+        if (head)
+            head->prev = toInsert;
         head = toInsert;
         return;
     }
 
     // Walk to node at position (psn - 1) or last node if list shorter
-    Node* temp = head;
+    Node *temp = head;
     int i = 0;
-    while (temp->next != nullptr && i < psn - 1) {
+    while (temp->next != nullptr && i < psn - 1)
+    {
         temp = temp->next;
         ++i;
     }
@@ -82,23 +102,23 @@ void InsertAt(Node *& head, int psn, int num) {
     // - node at index (psn-1) (normal case), or
     // - the last node (if psn > length), we'll append after temp
 
-    Node* next = temp->next;       // maybe nullptr if temp is tail
+    Node *next = temp->next; // maybe nullptr if temp is tail
 
     // Link the new node between temp and next
     temp->next = toInsert;
     toInsert->prev = temp;
     toInsert->next = next;
-    if (next) next->prev = toInsert;
+    if (next)
+        next->prev = toInsert;
 }
-
 
 int main()
 {
     Node *head;
-    int arr[] = {1, 2, 3, 4, 5,6,7,8,9};
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     int size = 9;
 
-    head = createDLL(arr,0,size);
+    head = createDLL(arr, 0, size);
     // head = CreateDLLbyTail(arr, size);
 
     InsertAt(head, 0, 30);
