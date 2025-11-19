@@ -115,13 +115,14 @@ void InsertAt(Node *&head, int psn, int num)
 int main()
 {
     Node *head;
-    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-    int size = 9;
+    // int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int arr[] = {0,1,0,2,0,1};
+    int size = 6;
 
     head = createDLL(arr, 0, size);
     // head = CreateDLLbyTail(arr, size);
 
-    InsertAt(head, 0, 30);
+    // InsertAt(head, 0, 30);
 
     // Preview the DDL
     Node *temp = head;
