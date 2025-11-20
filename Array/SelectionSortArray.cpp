@@ -15,6 +15,15 @@ int main(){
         int temp = arr[minIndex];
         arr[minIndex] = arr[i];
         arr[i] = temp;
+
+        // Printing the array after each pass
+        cout<<"Array after pass "<<i+1<<": ";
+        for(int k=0; k<n; k++){
+            cout<<arr[k]<<" ";
+        }
+        cout<<endl;
+        
+
     }
 
 }
