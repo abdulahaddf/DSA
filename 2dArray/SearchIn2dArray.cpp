@@ -3,7 +3,6 @@ public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
         int row = matrix.size();
         int col = matrix[0].size();
-
         int rowIndex =0;
         int colIndex = col -1;
 
