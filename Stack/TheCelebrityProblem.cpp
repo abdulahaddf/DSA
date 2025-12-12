@@ -2,6 +2,7 @@
 using namespace std;
 int celebrity(int **mat, int n)
 
+
 {
     // code here
     stack<int> st;
