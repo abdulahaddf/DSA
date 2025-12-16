@@ -2,6 +2,7 @@
 #include <vector>
 using namespace std;
 // Node structure for tree
+
 class Node
 {
 public:
@@ -13,6 +14,7 @@ public:
         data = x;
     }
 };
+
 // Function to add a child to a node
 void addChild(Node *parent, Node *child)
 {
