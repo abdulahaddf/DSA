@@ -19,7 +19,6 @@ void addChild(Node *parent, Node *child)
 {
     parent->children.push_back(child);
 }
-
 // Function to print parents of each node
 void printParents(Node *node, Node *parent)
 {
