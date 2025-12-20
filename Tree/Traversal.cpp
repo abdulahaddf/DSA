@@ -3,23 +3,27 @@
 using namespace std;
 
 // Node structure for tree
-class Node {
+class Node
+{
 public:
     int data;
-    vector<Node*> children;
+    vector<Node *> children;
 
-    Node(int x) {
+    Node(int x)
+    {
         data = x;
     }
 };
 
 // Function to add a child to a node
-void addChild(Node* parent, Node* child) {
+void addChild(Node *parent, Node *child)
+{
     parent->children.push_back(child);
 }
 
 // Function to print parents of each node
-void printParents(Node* node, Node* parent) {
+void printParents(Node *node, Node *parent)
+{
     if (parent == nullptr)
         cout << node->data << " -> NULL" << endl;
     else
@@ -30,7 +34,8 @@ void printParents(Node* node, Node* parent) {
 }
 
 // Function to print children of each node
-void printChildren(Node* node) {
+void printChildren(Node *node)
+{
     cout << node->data << " -> ";
     for (auto child : node->children)
         cout << child->data << " ";
@@ -41,8 +46,10 @@ void printChildren(Node* node) {
 }
 
 // Function to print leaf nodes
-void printLeafNodes(Node* node) {
-    if (node->children.empty()) {
+void printLeafNodes(Node *node)
+{
+    if (node->children.empty())
+    {
         cout << node->data << " ";
         return;
     }
@@ -50,10 +57,11 @@ void printLeafNodes(Node* node) {
         printLeafNodes(child);
 }
 
-// Function to print degrees of each node 
-void printDegrees(Node* node, Node* parent) {
+// Function to print degrees of each node
+void printDegrees(Node *node, Node *parent)
+{
     int degree = node->children.size();
-    if (parent != nullptr)  
+    if (parent != nullptr)
         degree++;
     cout << node->data << " -> " << degree << endl;
 
@@ -61,13 +69,14 @@ void printDegrees(Node* node, Node* parent) {
         printDegrees(child, node);
 }
 
-int main() {
+int main()
+{
     // Creating nodes
-    Node* root = new Node(1);
-    Node* n2 = new Node(2);
-    Node* n3 = new Node(3);
-    Node* n4 = new Node(4);
-    Node* n5 = new Node(5);
+    Node *root = new Node(1);
+    Node *n2 = new Node(2);
+    Node *n3 = new Node(3);
+    Node *n4 = new Node(4);
+    Node *n5 = new Node(5);
 
     // Constructing tree
     addChild(root, n2);
