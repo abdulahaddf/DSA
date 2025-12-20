@@ -11,7 +11,6 @@ struct Node
 
 
 
-
 class Solution {
   public:
     int countNonLeafNodes(Node* root) {
