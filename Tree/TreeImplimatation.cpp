@@ -12,33 +12,15 @@ public:
     }
 };
 
-Node* insert(Node* root, int val) {
-    if (root == NULL) {
-        return new Node(val);
+int main(){
+    int x;
+    cout<<"Enter the value of root node: ";
+    cin>>x;
+    queue<Node*> q; 
+    Node *root=new Node(x);
+    q.push(root);
+    while (!q.empty()){
+        
     }
-    if (val < root->data) {
-        root->left = insert(root->left, val);
-    } else {
-        root->right = insert(root->right, val);
-    }
-    return root;
-}
-void inorderTraversal(Node* root) {
-    if (root == NULL) {
-        return;
-    }
-    inorderTraversal(root->left);
-    cout << root->data << " ";
-    inorderTraversal(root->right);
-}
-int main() {
-    Node* root = NULL;
-    vector<int> values = {5, 3, 8, 1, 4, 7, 9};
-    for (int val : values) {
-        root = insert(root, val);
-    }
-    cout << "Inorder Traversal of the BST: ";
-    inorderTraversal(root);
-    cout << endl;
-    return 0;
+
 }
