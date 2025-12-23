@@ -8,6 +8,7 @@ struct Node
 */
 // you are required to complete this function
 // the function should return the count of Non-Leaf Nodes
+
 class Solution {
   public:
     int countNonLeafNodes(Node* root) {
