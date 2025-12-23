@@ -11,7 +11,6 @@ public:
     }
 };
 */
-
 class Solution {
   public:
     int height(Node* root) {
