@@ -1,6 +1,6 @@
 // Adjacency List
 
-unweighted graph
+// unweighted graph
 
 #include<iostream>
 #include<vector>
