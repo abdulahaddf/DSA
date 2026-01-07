@@ -2,24 +2,20 @@
 #include<vector>
 using namespace std;
 
-int findMin(int n)
-{
-    int count=0; 
-    vector<int> denomination = { 1, 2, 5, 10 };
-    
-    // Traverse through all denomination
-    for (int i = denomination.size() - 1; i >= 0; i--) {
-      count+=n/denomination[i];
-      n=n%denomination[i];
-   
-    }
-    return count; 
-}
+ int findMin(int N) {
+        int curr[] = {10, 5, 2, 1};
+        int notes = 0;
 
+        for (int i = 0; i < 4; i++) {
+            notes += N / curr[i];
+            N %= curr[i];
+        }
+        return notes;
+    }
 int main()
 {
    
-    int n = 39;
+    int n = 3900;
     cout<<findMin(n);
     return 0;
 }
