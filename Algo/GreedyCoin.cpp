@@ -1,7 +1,6 @@
 #include <iostream>
 #include<vector>
 using namespace std;
-
  int findMin(int N) {
         int curr[] = {10, 5, 2, 1};
         int notes = 0;
