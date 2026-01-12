@@ -12,6 +12,7 @@ using namespace std;
         return notes;
     }
 int main()
+
 {
     int n = 3900;
     cout<<findMin(n);
